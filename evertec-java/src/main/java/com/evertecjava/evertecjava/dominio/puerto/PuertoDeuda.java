@@ -1,4 +1,13 @@
 package com.evertecjava.evertecjava.dominio.puerto;
 
-public class PuertoDeuda {
+import com.evertecjava.evertecjava.dominio.entidades.Deuda;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+
+public interface PuertoDeuda {
+
+    void cargarDeudas(List<Deuda>deudas);
+    List<Deuda> ListarDeudas();
+
 }

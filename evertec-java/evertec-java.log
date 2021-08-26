@@ -1,0 +1,692 @@
+2021-08-25 18:54:21.587  INFO 12176 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : Starting EvertecJavaApplication using Java 11.0.11 on DESKTOP-K26KQ3T with PID 12176 (C:\Users\diego\Desktop\evertec\evertec-java\target\classes started by diego in C:\Users\diego\Desktop\evertec\evertec-java)
+2021-08-25 18:54:21.591  INFO 12176 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : No active profile set, falling back to default profiles: default
+2021-08-25 18:54:21.654  INFO 12176 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-08-25 18:54:21.658  INFO 12176 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-08-25 18:54:23.832  INFO 12176 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-25 18:54:23.889  INFO 12176 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 0 JPA repository interfaces.
+2021-08-25 18:54:25.237  INFO 12176 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2021-08-25 18:54:25.261  INFO 12176 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-25 18:54:25.264  INFO 12176 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-08-25 18:54:25.552  INFO 12176 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-25 18:54:25.553  INFO 12176 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3893 ms
+2021-08-25 18:54:26.021  INFO 12176 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-25 18:54:26.127  INFO 12176 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-25 18:54:26.408  INFO 12176 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-25 18:54:26.656  INFO 12176 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-25 18:54:26.967  INFO 12176 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-25 18:54:26.991  INFO 12176 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-08-25 18:54:28.003 DEBUG 12176 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists deuda
+2021-08-25 18:54:28.386 DEBUG 12176 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table deuda (
+       identificador_deuda varchar(15) not null,
+        correo varchar(60),
+        fecha_vencimiento date,
+        identificador_cliente varchar(15),
+        monto integer,
+        nombre_cliente varchar(60),
+        primary key (identificador_deuda)
+    ) engine=InnoDB
+2021-08-25 18:54:28.923  INFO 12176 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-25 18:54:29.090  INFO 12176 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-25 18:54:29.771  WARN 12176 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-25 18:54:30.175  INFO 12176 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-08-25 18:54:30.789  INFO 12176 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-25 18:54:31.870  INFO 12176 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2021-08-25 18:54:32.033  INFO 12176 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-08-25 18:54:32.134  INFO 12176 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-08-25 18:54:32.359  INFO 12176 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-08-25 18:54:32.891  INFO 12176 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : Started EvertecJavaApplication in 11.97 seconds (JVM running for 13.636)
+2021-08-25 18:54:38.533  INFO 12176 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-25 18:54:38.534  INFO 12176 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-25 18:54:38.537  INFO 12176 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-25 18:54:38.735  INFO 12176 --- [http-nio-8084-exec-1] c.e.e.i.controlador.DeudaControlador     : Se inicio el proceso de cargar deudas
+2021-08-25 18:54:38.770  INFO 12176 --- [http-nio-8084-exec-1] c.e.e.d.servicio.CargarDeudaServicio     : Se empezo a leer el archivo diego.txt
+2021-08-25 18:54:38.829 DEBUG 12176 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    select
+        deudaentid0_.identificador_deuda as identifi1_0_,
+        deudaentid0_.correo as correo2_0_,
+        deudaentid0_.fecha_vencimiento as fecha_ve3_0_,
+        deudaentid0_.identificador_cliente as identifi4_0_,
+        deudaentid0_.monto as monto5_0_,
+        deudaentid0_.nombre_cliente as nombre_c6_0_ 
+    from
+        deuda deudaentid0_
+2021-08-25 18:54:38.938  INFO 12176 --- [http-nio-8084-exec-1] c.e.e.d.servicio.CargarDeudaServicio     : Las deudas se cargaron correctamente
+2021-08-25 18:54:38.958 DEBUG 12176 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 18:54:38.965 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 18:54:38.968 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 18:54:38.977 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-4]
+2021-08-25 18:54:38.981 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 18:54:38.982 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 18:54:38.984 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1233]
+2021-08-25 18:54:38.989 DEBUG 12176 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 18:54:38.991 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 18:54:38.992 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 18:54:38.992 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-5]
+2021-08-25 18:54:38.993 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 18:54:38.993 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 18:54:38.994 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1231]
+2021-08-25 18:54:38.996 DEBUG 12176 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 18:54:38.997 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 18:54:38.997 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 18:54:38.998 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-6]
+2021-08-25 18:54:38.998 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 18:54:38.998 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 18:54:38.998 TRACE 12176 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1232]
+2021-08-25 18:54:39.006  INFO 12176 --- [http-nio-8084-exec-1] c.e.e.i.controlador.DeudaControlador     : Se termino el proceso de cargar Deudas
+2021-08-25 18:54:39.093  INFO 12176 --- [http-nio-8084-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    1336300 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    29332200 nanoseconds spent preparing 4 JDBC statements;
+    10933700 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    59634900 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 0 collections);
+    140200 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 18:55:25.969  INFO 12176 --- [http-nio-8084-exec-2] c.e.e.i.controlador.DeudaControlador     : Se inicio el proceso de cargar deudas
+2021-08-25 18:55:25.972  INFO 12176 --- [http-nio-8084-exec-2] c.e.e.d.servicio.CargarDeudaServicio     : Se empezo a leer el archivo diego.txt
+2021-08-25 18:55:25.976 DEBUG 12176 --- [http-nio-8084-exec-2] org.hibernate.SQL                        : 
+    select
+        deudaentid0_.identificador_deuda as identifi1_0_,
+        deudaentid0_.correo as correo2_0_,
+        deudaentid0_.fecha_vencimiento as fecha_ve3_0_,
+        deudaentid0_.identificador_cliente as identifi4_0_,
+        deudaentid0_.monto as monto5_0_,
+        deudaentid0_.nombre_cliente as nombre_c6_0_ 
+    from
+        deuda deudaentid0_
+2021-08-25 18:55:26.036  INFO 12176 --- [http-nio-8084-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    614700 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    355300 nanoseconds spent preparing 1 JDBC statements;
+    1396400 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    13800 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 18:55:26.056 ERROR 12176 --- [http-nio-8084-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: A different object with the same identifier value was already associated with the session : [com.evertecjava.evertecjava.infraestructura.persistencia.entidad.DeudaEntidad#zbc1233]; nested exception is javax.persistence.EntityExistsException: A different object with the same identifier value was already associated with the session : [com.evertecjava.evertecjava.infraestructura.persistencia.entidad.DeudaEntidad#zbc1233]] with root cause
+
+javax.persistence.EntityExistsException: A different object with the same identifier value was already associated with the session : [com.evertecjava.evertecjava.infraestructura.persistencia.entidad.DeudaEntidad#zbc1233]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:123) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:726) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:706) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.9.jar:5.3.9]
+	at com.sun.proxy.$Proxy90.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.9.jar:5.3.9]
+	at com.sun.proxy.$Proxy90.persist(Unknown Source) ~[na:na]
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql.cargarDeudas(AdaptadorDeudaMysql.java:30) ~[classes/:na]
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql$$FastClassBySpringCGLIB$$75c19254.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql$$EnhancerBySpringCGLIB$$c6c2f36f.cargarDeudas(<generated>) ~[classes/:na]
+	at com.evertecjava.evertecjava.dominio.servicio.CargarDeudaServicio.cargarDeudas(CargarDeudaServicio.java:46) ~[classes/:na]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda.cargarDeudas(ManejadorCargarDeuda.java:23) ~[classes/:na]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda$$FastClassBySpringCGLIB$$d146c893.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda$$EnhancerBySpringCGLIB$$1ade239a.cargarDeudas(<generated>) ~[classes/:na]
+	at com.evertecjava.evertecjava.infraestructura.controlador.DeudaControlador.CargarDeudasArchivoPlano(DeudaControlador.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2021-08-25 18:55:26.103  INFO 12176 --- [http-nio-8084-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 19:00:06.723  INFO 8808 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : Starting EvertecJavaApplication using Java 11.0.11 on DESKTOP-K26KQ3T with PID 8808 (C:\Users\diego\Desktop\evertec\evertec-java\target\classes started by diego in C:\Users\diego\Desktop\evertec\evertec-java)
+2021-08-25 19:00:06.729  INFO 8808 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : No active profile set, falling back to default profiles: default
+2021-08-25 19:00:06.825  INFO 8808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-08-25 19:00:06.826  INFO 8808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-08-25 19:00:08.825  INFO 8808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-25 19:00:08.877  INFO 8808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 JPA repository interfaces.
+2021-08-25 19:00:10.087  INFO 8808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2021-08-25 19:00:10.109  INFO 8808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-25 19:00:10.111  INFO 8808 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-08-25 19:00:10.371  INFO 8808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-25 19:00:10.372  INFO 8808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3543 ms
+2021-08-25 19:00:10.778  INFO 8808 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-25 19:00:10.849  INFO 8808 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-25 19:00:11.050  INFO 8808 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-25 19:00:11.243  INFO 8808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-25 19:00:11.512  INFO 8808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-25 19:00:11.536  INFO 8808 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-08-25 19:00:12.557 DEBUG 8808 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists deuda
+2021-08-25 19:00:12.594 DEBUG 8808 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table deuda (
+       identificador_deuda varchar(15) not null,
+        correo varchar(60),
+        fecha_vencimiento date,
+        identificador_cliente varchar(15),
+        monto integer,
+        nombre_cliente varchar(60),
+        primary key (identificador_deuda)
+    ) engine=InnoDB
+2021-08-25 19:00:12.654  INFO 8808 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-25 19:00:12.808  INFO 8808 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-25 19:00:13.425  WARN 8808 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-25 19:00:13.710  INFO 8808 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-08-25 19:00:14.015  INFO 8808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-25 19:00:14.393  INFO 8808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2021-08-25 19:00:14.396  INFO 8808 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-08-25 19:00:14.435  INFO 8808 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-08-25 19:00:14.503  INFO 8808 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-08-25 19:00:14.790  INFO 8808 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : Started EvertecJavaApplication in 8.965 seconds (JVM running for 10.976)
+2021-08-25 19:03:35.202  INFO 8808 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-25 19:03:35.203  INFO 8808 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-25 19:03:35.205  INFO 8808 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-25 19:03:35.396  INFO 8808 --- [http-nio-8084-exec-1] c.e.e.i.controlador.DeudaControlador     : Se inicio el proceso de cargar deudas
+2021-08-25 19:03:35.430  INFO 8808 --- [http-nio-8084-exec-1] c.e.e.d.servicio.CargarDeudaServicio     : Se empezo a leer el archivo diego.txt
+2021-08-25 19:03:35.477 DEBUG 8808 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    select
+        deudaentid0_.identificador_deuda as identifi1_0_,
+        deudaentid0_.correo as correo2_0_,
+        deudaentid0_.fecha_vencimiento as fecha_ve3_0_,
+        deudaentid0_.identificador_cliente as identifi4_0_,
+        deudaentid0_.monto as monto5_0_,
+        deudaentid0_.nombre_cliente as nombre_c6_0_ 
+    from
+        deuda deudaentid0_
+2021-08-25 19:03:35.550  INFO 8808 --- [http-nio-8084-exec-1] c.e.e.d.servicio.CargarDeudaServicio     : Las deudas se cargaron correctamente
+2021-08-25 19:03:35.565 DEBUG 8808 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 19:03:35.570 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 19:03:35.572 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 19:03:35.577 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-4]
+2021-08-25 19:03:35.580 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 19:03:35.581 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 19:03:35.582 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1233]
+2021-08-25 19:03:35.588 DEBUG 8808 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 19:03:35.589 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 19:03:35.590 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 19:03:35.590 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-5]
+2021-08-25 19:03:35.591 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 19:03:35.591 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 19:03:35.592 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1231]
+2021-08-25 19:03:35.593 DEBUG 8808 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 19:03:35.595 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 19:03:35.596 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 19:03:35.597 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-6]
+2021-08-25 19:03:35.598 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 19:03:35.598 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 19:03:35.599 TRACE 8808 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1232]
+2021-08-25 19:03:35.607  INFO 8808 --- [http-nio-8084-exec-1] c.e.e.i.controlador.DeudaControlador     : Se termino el proceso de cargar Deudas
+2021-08-25 19:03:35.702  INFO 8808 --- [http-nio-8084-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    1636000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    25913700 nanoseconds spent preparing 4 JDBC statements;
+    8176100 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    49102000 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 0 collections);
+    62200 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 19:03:38.122  INFO 8808 --- [http-nio-8084-exec-2] c.e.e.i.controlador.DeudaControlador     : Se inicio el proceso de cargar deudas
+2021-08-25 19:03:38.126  INFO 8808 --- [http-nio-8084-exec-2] c.e.e.d.servicio.CargarDeudaServicio     : Se empezo a leer el archivo diego.txt
+2021-08-25 19:03:38.130 DEBUG 8808 --- [http-nio-8084-exec-2] org.hibernate.SQL                        : 
+    select
+        deudaentid0_.identificador_deuda as identifi1_0_,
+        deudaentid0_.correo as correo2_0_,
+        deudaentid0_.fecha_vencimiento as fecha_ve3_0_,
+        deudaentid0_.identificador_cliente as identifi4_0_,
+        deudaentid0_.monto as monto5_0_,
+        deudaentid0_.nombre_cliente as nombre_c6_0_ 
+    from
+        deuda deudaentid0_
+2021-08-25 19:03:38.187  INFO 8808 --- [http-nio-8084-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    510800 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    448500 nanoseconds spent preparing 1 JDBC statements;
+    1340400 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    11300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 19:03:38.204 ERROR 8808 --- [http-nio-8084-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Hay existe deuda con es identificador en la base de datos] with root cause
+
+java.lang.RuntimeException: Hay existe deuda con es identificador en la base de datos
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql.cargarDeudas(AdaptadorDeudaMysql.java:36) ~[classes/:na]
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql$$FastClassBySpringCGLIB$$75c19254.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql$$EnhancerBySpringCGLIB$$3b2bb2b3.cargarDeudas(<generated>) ~[classes/:na]
+	at com.evertecjava.evertecjava.dominio.servicio.CargarDeudaServicio.cargarDeudas(CargarDeudaServicio.java:46) ~[classes/:na]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda.cargarDeudas(ManejadorCargarDeuda.java:23) ~[classes/:na]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda$$FastClassBySpringCGLIB$$d146c893.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda$$EnhancerBySpringCGLIB$$d3ac6b0f.cargarDeudas(<generated>) ~[classes/:na]
+	at com.evertecjava.evertecjava.infraestructura.controlador.DeudaControlador.CargarDeudasArchivoPlano(DeudaControlador.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2021-08-25 19:03:38.241  INFO 8808 --- [http-nio-8084-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 19:05:32.503  INFO 13796 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : Starting EvertecJavaApplication using Java 11.0.11 on DESKTOP-K26KQ3T with PID 13796 (C:\Users\diego\Desktop\evertec\evertec-java\target\classes started by diego in C:\Users\diego\Desktop\evertec\evertec-java)
+2021-08-25 19:05:32.509  INFO 13796 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : No active profile set, falling back to default profiles: default
+2021-08-25 19:05:32.601  INFO 13796 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-08-25 19:05:32.602  INFO 13796 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-08-25 19:05:34.674  INFO 13796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-25 19:05:34.720  INFO 13796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
+2021-08-25 19:05:35.842  INFO 13796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2021-08-25 19:05:35.860  INFO 13796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-25 19:05:35.861  INFO 13796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-08-25 19:05:36.123  INFO 13796 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-25 19:05:36.124  INFO 13796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3520 ms
+2021-08-25 19:05:36.529  INFO 13796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-25 19:05:36.628  INFO 13796 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-25 19:05:36.843  INFO 13796 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-25 19:05:36.986  INFO 13796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-25 19:05:37.242  INFO 13796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-25 19:05:37.267  INFO 13796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-08-25 19:05:38.218 DEBUG 13796 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists deuda
+2021-08-25 19:05:38.252 DEBUG 13796 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table deuda (
+       identificador_deuda varchar(15) not null,
+        correo varchar(60),
+        fecha_vencimiento date,
+        identificador_cliente varchar(15),
+        monto integer,
+        nombre_cliente varchar(60),
+        primary key (identificador_deuda)
+    ) engine=InnoDB
+2021-08-25 19:05:38.317  INFO 13796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-25 19:05:38.493  INFO 13796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-25 19:05:39.115  WARN 13796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-25 19:05:39.417  INFO 13796 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-08-25 19:05:39.683  INFO 13796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-25 19:05:40.073  INFO 13796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2021-08-25 19:05:40.076  INFO 13796 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-08-25 19:05:40.111  INFO 13796 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-08-25 19:05:40.179  INFO 13796 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-08-25 19:05:40.457  INFO 13796 --- [restartedMain] c.e.evertecjava.EvertecJavaApplication   : Started EvertecJavaApplication in 8.882 seconds (JVM running for 10.986)
+2021-08-25 19:05:45.894  INFO 13796 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-25 19:05:45.895  INFO 13796 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-25 19:05:45.897  INFO 13796 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-25 19:05:46.080  INFO 13796 --- [http-nio-8084-exec-1] c.e.e.i.controlador.DeudaControlador     : Se inicio el proceso de cargar deudas
+2021-08-25 19:05:46.112  INFO 13796 --- [http-nio-8084-exec-1] c.e.e.d.servicio.CargarDeudaServicio     : Se empezo a leer el archivo diego.txt
+2021-08-25 19:05:46.160 DEBUG 13796 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    select
+        deudaentid0_.identificador_deuda as identifi1_0_,
+        deudaentid0_.correo as correo2_0_,
+        deudaentid0_.fecha_vencimiento as fecha_ve3_0_,
+        deudaentid0_.identificador_cliente as identifi4_0_,
+        deudaentid0_.monto as monto5_0_,
+        deudaentid0_.nombre_cliente as nombre_c6_0_ 
+    from
+        deuda deudaentid0_
+2021-08-25 19:05:46.235  INFO 13796 --- [http-nio-8084-exec-1] c.e.e.d.servicio.CargarDeudaServicio     : Las deudas se cargaron correctamente
+2021-08-25 19:05:46.250 DEBUG 13796 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 19:05:46.255 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 19:05:46.257 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 19:05:46.264 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-4]
+2021-08-25 19:05:46.267 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 19:05:46.268 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 19:05:46.269 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1233]
+2021-08-25 19:05:46.275 DEBUG 13796 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 19:05:46.277 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 19:05:46.278 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 19:05:46.278 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-5]
+2021-08-25 19:05:46.278 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 19:05:46.279 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 19:05:46.279 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1231]
+2021-08-25 19:05:46.281 DEBUG 13796 --- [http-nio-8084-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        deuda
+        (correo, fecha_vencimiento, identificador_cliente, monto, nombre_cliente, identificador_deuda) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-25 19:05:46.282 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [juan.perez@gmail.com]
+2021-08-25 19:05:46.283 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [2021-03-12]
+2021-08-25 19:05:46.283 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [145657876-6]
+2021-08-25 19:05:46.284 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [19000]
+2021-08-25 19:05:46.284 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [juan perez saez]
+2021-08-25 19:05:46.284 TRACE 13796 --- [http-nio-8084-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [zbc1232]
+2021-08-25 19:05:46.292  INFO 13796 --- [http-nio-8084-exec-1] c.e.e.i.controlador.DeudaControlador     : Se termino el proceso de cargar Deudas
+2021-08-25 19:05:46.397  INFO 13796 --- [http-nio-8084-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    1280900 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    23282600 nanoseconds spent preparing 4 JDBC statements;
+    8064000 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    49888600 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 0 collections);
+    105400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 19:05:47.578  INFO 13796 --- [http-nio-8084-exec-2] c.e.e.i.controlador.DeudaControlador     : Se inicio el proceso de cargar deudas
+2021-08-25 19:05:47.582  INFO 13796 --- [http-nio-8084-exec-2] c.e.e.d.servicio.CargarDeudaServicio     : Se empezo a leer el archivo diego.txt
+2021-08-25 19:05:47.585 DEBUG 13796 --- [http-nio-8084-exec-2] org.hibernate.SQL                        : 
+    select
+        deudaentid0_.identificador_deuda as identifi1_0_,
+        deudaentid0_.correo as correo2_0_,
+        deudaentid0_.fecha_vencimiento as fecha_ve3_0_,
+        deudaentid0_.identificador_cliente as identifi4_0_,
+        deudaentid0_.monto as monto5_0_,
+        deudaentid0_.nombre_cliente as nombre_c6_0_ 
+    from
+        deuda deudaentid0_
+2021-08-25 19:05:47.654  INFO 13796 --- [http-nio-8084-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    571200 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    796400 nanoseconds spent preparing 1 JDBC statements;
+    2109100 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    11500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-25 19:05:47.678 ERROR 13796 --- [http-nio-8084-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.evertecjava.evertecjava.infraestructura.exception.DeudaMysqlExcepcion: Hay existe deuda con es identificador en la base de datos] with root cause
+
+com.evertecjava.evertecjava.infraestructura.exception.DeudaMysqlExcepcion: Hay existe deuda con es identificador en la base de datos
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql.cargarDeudas(AdaptadorDeudaMysql.java:37) ~[classes/:na]
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql$$FastClassBySpringCGLIB$$75c19254.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.evertecjava.evertecjava.infraestructura.persistencia.adaptador.AdaptadorDeudaMysql$$EnhancerBySpringCGLIB$$e7fa039.cargarDeudas(<generated>) ~[classes/:na]
+	at com.evertecjava.evertecjava.dominio.servicio.CargarDeudaServicio.cargarDeudas(CargarDeudaServicio.java:46) ~[classes/:na]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda.cargarDeudas(ManejadorCargarDeuda.java:23) ~[classes/:na]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda$$FastClassBySpringCGLIB$$d146c893.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.9.jar:5.3.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.9.jar:5.3.9]
+	at com.evertecjava.evertecjava.aplicacion.Manejador.ManejadorCargarDeuda$$EnhancerBySpringCGLIB$$de71587.cargarDeudas(<generated>) ~[classes/:na]
+	at com.evertecjava.evertecjava.infraestructura.controlador.DeudaControlador.CargarDeudasArchivoPlano(DeudaControlador.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2021-08-25 19:05:47.726  INFO 13796 --- [http-nio-8084-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
