@@ -1,9 +1,9 @@
 package com.evertecjava.evertecjava.dominio.servicio;
 
 import com.evertecjava.evertecjava.dominio.entidades.Deuda;
-import com.evertecjava.evertecjava.dominio.excepcion.ArchivoException;
-import com.evertecjava.evertecjava.dominio.excepcion.DeudaException;
-import com.evertecjava.evertecjava.dominio.puerto.PuertoDeuda;
+import com.evertecjava.evertecjava.dominio.excepcion.ExcepcionArchivo;
+import com.evertecjava.evertecjava.dominio.excepcion.ExcepcionDeuda;
+import com.evertecjava.evertecjava.dominio.puerto.IPuertoDeuda;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class CargarDeudaServicio {
 
-    private PuertoDeuda puertoDeuda;
+    private IPuertoDeuda puertoDeuda;
     private List<Deuda> deudas;
     private static final String  ARCHIVOVACIO="Necesitas Cargar un archivo";
     private static final String  EXTENSION="txt";
@@ -26,25 +26,23 @@ public class CargarDeudaServicio {
     private static final String  EXTENSIONNOVALIDA="Extension no valida solo se permite txt";
     private static final String  DEUDAREPETIDA="Hay deudas que ya existen en el sistema";
     private final Log log= LogFactory.getLog(getClass());
-    public CargarDeudaServicio(PuertoDeuda puertoDeuda) {
+    public CargarDeudaServicio(IPuertoDeuda puertoDeuda) {
         this.puertoDeuda = puertoDeuda;
         this.deudas= new ArrayList<>();
     }
 
     public  List<Deuda> cargarDeudas(MultipartFile multipartFile) throws IOException {
-
-        if(multipartFile.isEmpty()) throw  new ArchivoException(ARCHIVOVACIO);
+        this.deudas.clear();
+        if(multipartFile.isEmpty()) throw  new ExcepcionArchivo(ARCHIVOVACIO);
         String[] fileFrags = multipartFile.getOriginalFilename().split("\\.");
         String extension = fileFrags[fileFrags.length-1];
-        if(!EXTENSION.equalsIgnoreCase(extension)) throw new ArchivoException(EXTENSIONNOVALIDA);
+        if(!EXTENSION.equalsIgnoreCase(extension)) throw new ExcepcionArchivo(EXTENSIONNOVALIDA);
         this.log.info("Se empezo a leer el archivo "+multipartFile.getOriginalFilename());
         this.leerArchivo(multipartFile.getInputStream());
-        if(this.deudas.size()==0)throw  new DeudaException(NOHAYDEUDAS);
+        if(this.deudas.size()==0)throw  new ExcepcionDeuda(NOHAYDEUDAS);
         List<Deuda>deudasBaseDeDatos=this.puertoDeuda.ListarDeudas();
 
-        for (Deuda deuda: deudas) {
-            if(deudasBaseDeDatos.contains(deuda)) throw  new DeudaException(DEUDAREPETIDA);
-        }
+
 
         this.puertoDeuda.cargarDeudas(deudas);
         this.log.info("Las deudas se cargaron correctamente");
@@ -65,12 +63,12 @@ public class CargarDeudaServicio {
 
         } catch (IOException e) {
             this.log.error("Error al leer archivo" + e.getMessage());
-            throw  new ArchivoException(e.getMessage());
+            throw  new ExcepcionArchivo(e.getMessage());
         }
     }
 
     private  void agregarDeuda(String deudas[]){
-if(deudas.length!=7) throw new DeudaException(FORMATODEUDA);
+if(deudas.length!=6) throw new ExcepcionDeuda(FORMATODEUDA);
          this.deudas.add(new Deuda(deudas[0],deudas[1],deudas[2],Integer.parseInt(deudas[3]),deudas[4],deudas[5]));
 
 

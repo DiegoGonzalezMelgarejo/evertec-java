@@ -1,10 +1,10 @@
 package com.evertecjava.evertecjava.infraestructura.persistencia.adaptador;
 
 import com.evertecjava.evertecjava.dominio.entidades.Deuda;
-import com.evertecjava.evertecjava.dominio.puerto.PuertoDeuda;
+import com.evertecjava.evertecjava.dominio.puerto.IPuertoDeuda;
 import com.evertecjava.evertecjava.infraestructura.exception.DeudaMysqlExcepcion;
 import com.evertecjava.evertecjava.infraestructura.persistencia.entidad.DeudaEntidad;
-import com.evertecjava.evertecjava.infraestructura.persistencia.transformador.DeudaTraansformador;
+import com.evertecjava.evertecjava.infraestructura.persistencia.transformador.DeudaTransformador;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityExistsException;
@@ -14,7 +14,7 @@ import javax.persistence.Query;
 import java.util.List;
 @Repository
 
-public class AdaptadorDeudaMysql implements PuertoDeuda {
+public class AdaptadorDeudaMysql implements IPuertoDeuda {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -28,7 +28,7 @@ public class AdaptadorDeudaMysql implements PuertoDeuda {
         try{
             for (Deuda deuda:deudas
             ) {
-                DeudaEntidad deudaEntidad= DeudaTraansformador.convertirDeudaDominioADeudaEntity(deuda);
+                DeudaEntidad deudaEntidad= DeudaTransformador.convertirDeudaDominioADeudaEntity(deuda);
                 this.entityManager.persist(deudaEntidad);
             }
         }catch (EntityExistsException e){
@@ -41,6 +41,6 @@ public class AdaptadorDeudaMysql implements PuertoDeuda {
     public List<Deuda> ListarDeudas() {
         Query query=this.entityManager.createQuery(DEUDA_FIND_ALL);
 
-        return DeudaTraansformador.convertirListaPagoEntityAListaPagoDominio(query.getResultList());
+        return DeudaTransformador.convertirListaPagoEntityAListaPagoDominio(query.getResultList());
     }
 }

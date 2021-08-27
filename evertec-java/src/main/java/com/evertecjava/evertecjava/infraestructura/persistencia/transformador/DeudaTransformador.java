@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeudaTraansformador {
+public class DeudaTransformador {
 
     public static List<Deuda> convertirListaPagoEntityAListaPagoDominio(List<DeudaEntidad> deudaEntidads){
         List<Deuda> deudas= new ArrayList<>();

@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-public interface PuertoDeuda {
+public interface IPuertoDeuda {
 
     void cargarDeudas(List<Deuda>deudas);
     List<Deuda> ListarDeudas();

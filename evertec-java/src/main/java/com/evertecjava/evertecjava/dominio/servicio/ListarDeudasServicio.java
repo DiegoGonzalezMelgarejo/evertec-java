@@ -1,14 +1,14 @@
 package com.evertecjava.evertecjava.dominio.servicio;
 
 import com.evertecjava.evertecjava.dominio.entidades.Deuda;
-import com.evertecjava.evertecjava.dominio.puerto.PuertoDeuda;
+import com.evertecjava.evertecjava.dominio.puerto.IPuertoDeuda;
 
 import java.util.List;
 
 public class ListarDeudasServicio {
-    private PuertoDeuda puertoDeuda;
+    private IPuertoDeuda puertoDeuda;
 
-    public ListarDeudasServicio(PuertoDeuda puertoDeuda) {
+    public ListarDeudasServicio(IPuertoDeuda puertoDeuda) {
         this.puertoDeuda = puertoDeuda;
     }
 
